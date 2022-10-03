@@ -22,10 +22,9 @@ function CarouselDrinks() {
       setCarouselDrinks(lengthArray(data));
     };
     apiRequest();
-    // console.log(carouselDrinks);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // console.log(carouselDrinks);
 
   return (
     <section>
