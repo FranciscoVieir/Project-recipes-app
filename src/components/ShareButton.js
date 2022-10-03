@@ -38,7 +38,6 @@ function ShareButton({ index, recipe }) {
     </div>
   );
 }
-
 ShareButton.propTypes = {
   index: PropTypes.number.isRequired,
   recipe: PropTypes.shape().isRequired,

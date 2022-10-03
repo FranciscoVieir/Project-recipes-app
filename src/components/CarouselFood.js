@@ -23,7 +23,6 @@ function CarouselFood() {
     apiRequest();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // console.log(Object.keys(carouselFood));
 
   return (
     <section>

@@ -26,7 +26,7 @@ function RecipeInProgress() {
     if (window.location.pathname.includes('/drinks')) {
       fetchBebidas();
     }
-  }, [], idDetails);
+  }, [idDetails]);
   return (
     <div>
       <h2>Recipe in Progress</h2>
