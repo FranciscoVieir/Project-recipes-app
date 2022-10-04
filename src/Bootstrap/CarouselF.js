@@ -5,7 +5,6 @@ import MyContext from '../context/Context';
 
 function NoTransitionExample() {
   const { carouselFood } = useContext(MyContext);
-  console.log(carouselFood);
   return (
     <Carousel slide={ false }>
       <Carousel.Item>
