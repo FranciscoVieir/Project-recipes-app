@@ -63,6 +63,7 @@ describe('Testando o RecipesProgress', () => {
       expect(element).toBeInTheDocument();
     });
     expect(global.fetch).toHaveBeenCalledTimes(1);
+
     expect(global.fetch).toHaveBeenCalledWith(apiIngredient);
 
     global.fetch = jest.fn(async () => ({
