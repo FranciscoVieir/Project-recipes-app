@@ -124,6 +124,7 @@ export default function DetailsDrinks(data) {
         <CarouselFood />
         {clearButton === '' && (
           <button
+            style={ { marginLeft: '300px' } }
             type="button"
             className="div-button"
             data-testid="start-recipe-btn"

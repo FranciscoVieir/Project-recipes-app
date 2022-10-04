@@ -65,6 +65,10 @@ describe('Testando o RecipesProgress', () => {
     expect(global.fetch).toHaveBeenCalledTimes(1);
     expect(global.fetch).toHaveBeenCalledWith(apiIngredient);
 
+    global.fetch = jest.fn(async () => ({
+      json: async () => meals52874Mock,
+    }));
+
     const imgButton = await screen.findByRole('button', { name: /Beef and Mustard Pie/i });
     expect(imgButton).toBeInTheDocument();
     userEvent.click(imgButton);
@@ -77,10 +81,6 @@ describe('Testando o RecipesProgress', () => {
     expect(buttonRecipe).toBeInTheDocument();
     userEvent.click(buttonRecipe);
 
-    global.fetch = jest.fn(async () => ({
-      json: async () => meals52874Mock,
-    }));
-
     await waitFor(() => {
       expect(history.location.pathname).toBe('/meals/52874/in-progress');
     });
@@ -88,12 +88,12 @@ describe('Testando o RecipesProgress', () => {
     const titleRecipes = screen.getByRole('heading', { value: 2, name: /Recipe in Progress/i });
     expect(titleRecipes).toBeInTheDocument();
 
-    // const apiMeals52874 = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=52874';
+    const apiMeals52874 = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=52874';
 
     // expect(global.fetch).toHaveBeenCalledTimes(1);
-    // expect(global.fetch).toHaveBeenCalledWith(apiMeals52874);
+    expect(global.fetch).toHaveBeenCalledWith(apiMeals52874);
 
-    // const imageRef = screen.getByAltText(/meal-thumbnail/i);
-    // expect(imageRef).toHaveAttribute('src', 'https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg');
+    const imageRef = screen.getByAltText(/meal-thumbnail/i);
+    expect(imageRef).toHaveAttribute('src', 'https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg');
   });
 });
