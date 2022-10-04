@@ -1,14 +1,12 @@
 import React, { useContext } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import MyContext from '../context/Context';
-import './Carousel.css';
 
 function NoTransitionExample() {
   const { carouselDrinks } = useContext(MyContext);
   return (
     <Carousel slide={ false }>
       <Carousel.Item>
-
         <div>
           <button
             type="button"
